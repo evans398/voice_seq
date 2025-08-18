@@ -1,6 +1,6 @@
 # voice_seq
 
-This is a Max for Live device that allows you to route incoming MIDI notes to 10 different voices according to 6 algorithms.
+This is a Max for Live device that allows you to route incoming MIDI notes to 10 different voices according to 6 algorithms. This device is born out of a system that I originally built for a live multi-organ performance and later expanded for a performance at +RAIN festival in Barcelona. This system incorportated a MIDI instrument performance, Markov Model, rhythm generator, and voice sequencer. The Markov Model was trained in real-time by the MIDI performance. The rhythm generator was conditioned in real-time by the same performance and generated an acompanying rhythm. This generated rhythm would trigger the Markov model to send a note out. Essentially, we were assigning pitch to a generated rhythmic accompaniment condition by a performer. Finally, these generated notes were sent to the voice sequencer and assigned to different output instruments. The +RAIN performance included a spatial audio component via a custom Spat patch developed according to the venue's sound system. A NIME paper for the multi-organ performance can be found here: https://nime2025.org/proceedings/55.html
 
 ## Set-up
 
@@ -30,3 +30,8 @@ Each channel has two setting to transform the notes its receives:
 ## Resets, Presets, Channel Names
 
 "R" buttons next to weights, on/off, octave, and duration will reset each channel to the default. Preset box saves all weights, active channels, note transform values, algorithm selection, sequence, and sequence direction. The text at the top of each channel can be edited by the user to rename each channel.
+
+## Tips
+
+I still have a lot of creative exploration to do but I've found that using Ableton's Rotating Rhythm Generator or Arpeggiator can be nice for generating immediate results. Rapidly triggering notes with the arp and multiple channels can lead to some very cool textures. Try existing chord progressions or melodies composed for a single instrument and see how they sound with voice_seq. It pays off to spend a bit of time on the destination synths and overall mix especially if you're using a lot of active channels. Having some active channels with no destination instrument is a good way to add space, especially if you're using the arp or rhythm generator.
+
