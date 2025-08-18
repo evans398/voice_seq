@@ -2,10 +2,14 @@
 
 This is a Max for Live device that allows you to route incoming MIDI notes to 10 different voices according to 6 algorithms. This device is born out of a system that I originally built for a live multi-organ performance and later expanded for a performance at +RAIN festival in Barcelona. This system incorportated a MIDI instrument performance, Markov Model, rhythm generator, and voice sequencer. The Markov Model was trained in real-time by the MIDI performance. The rhythm generator was conditioned in real-time by the same performance and generated an acompanying rhythm. This generated rhythm would trigger the Markov model to send a note out. Essentially, we were assigning pitch to a generated rhythmic accompaniment condition by a performer. Finally, these generated notes were sent to the voice sequencer and assigned to different output instruments. The +RAIN performance included a spatial audio component via a custom Spat patch developed according to the venue's sound system. A NIME paper for the multi-organ performance can be found here: https://nime2025.org/proceedings/55.html
 
+<img width="597" height="196" alt="Screenshot 2025-08-18 at 6 52 05 PM" src="https://github.com/user-attachments/assets/23f6ed09-a987-4c61-b473-a3c4563a4231" />
+
 ## Set-up
 
 1. Place the device on a MIDI track. Route the MIDI that you want to sequence to multiple voices to this track. This can be a MIDI clip, input from a MIDI instrument, etc.
 2. On the tracks that correspond to the voices you want to route MIDI to, place the voice_seq Receiver device. This device consists of 10 buttons which correspond to which voice_seq channels this track will receive.
+
+<img width="104" height="196" alt="Screenshot 2025-08-18 at 7 13 14 PM" src="https://github.com/user-attachments/assets/9dabe069-2239-44ec-b426-d69857299a21" />
 
 ## Algorithms
 1. Weighted Seq - This algortihm builds a voice sequence according to the active channels, the weights (slider values) assigned to each channel, and the defined sequence length. The sequence is regenerated anytime an adjustment is made to a weight, a channel is turned on or off, or when the regen button is pressed. The direction of this sequence can be defined by the directional buttons below the algorithm selections.
